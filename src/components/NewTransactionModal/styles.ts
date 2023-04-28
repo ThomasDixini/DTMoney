@@ -11,7 +11,7 @@ export const Overlay = styled(Dialog.Overlay)`
 `
 
 export const Content = styled(Dialog.Content)`
-    background-color: ${props => props.theme["gray-700"]};
+    background-color: ${props => props.theme["gray-800"]};
     border-radius: 6px;
 
     padding: 2.5rem 3rem;
@@ -47,6 +47,25 @@ export const Content = styled(Dialog.Content)`
             border: 0;
         }
     }
+`
+
+export const TransactionType = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 0.5rem;
+`
+export const TransactionTypeButton = styled.button`
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    border: 0;
+    background-color: ${props => props.theme["gray-600"]};
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
 `
 
 export const CloseButton = styled(Dialog.Close)`
