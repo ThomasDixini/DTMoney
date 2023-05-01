@@ -7,6 +7,14 @@
             "category": "Venda",
             "type": "income",
             "createdAt": "2023-04-29T21:05:35.170Z"
+        },
+        {
+            "id": 2,
+            "description": "hamburguer",
+            "price": 1980,
+            "category": "Alimentação",
+            "type": "outcome",
+            "createdAt": "2023-04-08T21:05:35.170Z"
         }
     ]
 }
