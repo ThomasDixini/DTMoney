@@ -46,6 +46,17 @@ export const Content = styled(Dialog.Content)`
             padding: 1rem;
             border-radius: 6px;
             border: 0;
+
+            &:disabled {
+                cursor: not-allowed;
+                opacity: 0.4;
+            }
+
+            &:not(:disabled):hover {
+                filter: brightness(0.8);
+                transition: background-color 0.2s;
+                cursor: pointer
+            }
         }
     }
 `
