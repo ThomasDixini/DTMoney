@@ -3,6 +3,7 @@ import { Transaction } from "../pages/Transactions/Transactions";
 
 interface TransactionsContextData {
     transacions: Transaction[];
+    loadTransactions: (query?: string) => Promise<void>;
 }
 
 interface TransactionsProviderProps {
@@ -14,8 +15,14 @@ export const TransactionsContext = createContext({} as TransactionsContextData);
 export function TransactionsProvider({children}: TransactionsProviderProps) {
     const [transacions, setTransactions] = useState<Transaction[]>([]);
 
-    async function loadTransactions() {
-        const response = await fetch(`http://localhost:3333/transactions`)
+    async function loadTransactions(query?: string) {
+        const url = new URL('http://localhost:3333/transactions')
+
+        if(query){
+            url.searchParams.append('q', query)
+        }
+
+        const response = await fetch(url)
         const data = await response.json();
 
         setTransactions(data)
@@ -26,7 +33,10 @@ export function TransactionsProvider({children}: TransactionsProviderProps) {
     }, [])
 
     return(
-        <TransactionsContext.Provider value={{ transacions }}>
+        <TransactionsContext.Provider value={{ 
+            transacions ,
+            loadTransactions
+            }}>
             {children}
         </TransactionsContext.Provider>
     )
