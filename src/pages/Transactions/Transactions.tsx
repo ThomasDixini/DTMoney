@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContextSelector } from 'use-context-selector'
 import { Header } from "../../components/Header/Header";
 import { SearchForm } from "../../components/SearchForm";
 import { Summary } from "../../components/Summary/index";
 import { PriceHighlight, TransactionsContainer, TransactionsTable } from "./styles";
 import { TransactionsContext } from "../../context/TransactionsContext";
 import { dateFormatter, priceFormatter } from "../../utils/formatter";
+import { memo } from 'react';
 
 export interface Transaction {
     id: number,
@@ -15,9 +16,11 @@ export interface Transaction {
     createdAt: string,
 }
 
-export function Transactions() {
+function TransactionsPage() {
 
-    const { transacions } = useContext(TransactionsContext)
+    const transacions = useContextSelector(TransactionsContext, context => {
+        return context.transacions
+    })
 
     return (
         <>
@@ -50,3 +53,5 @@ export function Transactions() {
         </>
     );
 }
+
+export const Transactions = memo(TransactionsPage)
