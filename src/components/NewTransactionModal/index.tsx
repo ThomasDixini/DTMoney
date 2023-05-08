@@ -3,7 +3,7 @@ import { Content, Overlay, CloseButton, TransactionType, TransactionTypeButton }
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react';
 import { Controller, useForm } from 'react-hook-form';
 import * as z from 'zod'
-import { useContext } from 'react';
+import { useContextSelector } from "use-context-selector";
 import { TransactionsContext } from '../../context/TransactionsContext';
 
 const createTransitionSchema = z.object({
@@ -16,7 +16,9 @@ const createTransitionSchema = z.object({
 type createTransactionType = z.infer<typeof createTransitionSchema>
 
 export function NewTransactionModal() {
-    const { createTransactions } = useContext(TransactionsContext) 
+    const createTransactions = useContextSelector(TransactionsContext, context => {
+        return context.createTransactions
+    }) 
     const { control, register, handleSubmit, formState: { isSubmitting }, reset   } = useForm<createTransactionType>({
         defaultValues: {
             type: 'income'
