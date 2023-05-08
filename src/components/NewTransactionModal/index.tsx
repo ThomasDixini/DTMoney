@@ -17,7 +17,7 @@ type createTransactionType = z.infer<typeof createTransitionSchema>
 
 export function NewTransactionModal() {
     const { createTransactions } = useContext(TransactionsContext) 
-    const { control, register, handleSubmit, formState: { isSubmitting }  } = useForm<createTransactionType>({
+    const { control, register, handleSubmit, formState: { isSubmitting }, reset   } = useForm<createTransactionType>({
         defaultValues: {
             type: 'income'
         }
@@ -33,6 +33,8 @@ export function NewTransactionModal() {
             type,
             createdAt: new Date()
         })
+
+        reset()
     }
 
     return (
