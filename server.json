@@ -1,20 +1,28 @@
 {
-    "transactions": [
-        {
-            "id": 1,
-            "description": "Desenvolvimento de site",
-            "price": 14000,
-            "category": "Venda",
-            "type": "income",
-            "createdAt": "2023-04-29T21:05:35.170Z"
-        },
-        {
-            "id": 2,
-            "description": "hamburguer",
-            "price": 1980,
-            "category": "Alimentação",
-            "type": "outcome",
-            "createdAt": "2023-04-08T21:05:35.170Z"
-        }
-    ]
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "price": 14000,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2023-04-29T21:05:35.170Z"
+    },
+    {
+      "id": 2,
+      "description": "hamburguer",
+      "price": 1980,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2023-04-08T21:05:35.170Z"
+    },
+    {
+      "description": "Pastel",
+      "category": "Alimentação",
+      "price": 5,
+      "type": "outcome",
+      "createdAt": "2023-05-08T00:08:57.328Z",
+      "id": 3
+    }
+  ]
 }
