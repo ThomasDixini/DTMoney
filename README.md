@@ -46,6 +46,16 @@ Com esse sistema, o usuário pode controlar suas finanças de maneira simples e 
 | red-500 | ![#AB222E](https://via.placeholder.com/10/AB222E?text=+) #AB222E |
 | red-700 | ![#7A1921](https://via.placeholder.com/10/7A1921?text=+) #7A1921 |
 
+## Demonstrações
+
+### Busca 
+![Busca](https://github.com/ThomasDixini/DTMoney/assets/83423919/b762f952-e1f1-4413-a1ce-ffceb23407d1)
+</br>
+
+### Transação
+![Transação](https://github.com/ThomasDixini/DTMoney/assets/83423919/46465b1e-6f94-43ed-b917-d4ab20dcd30d)
+</br>
+
 ## Rodando localmente
 
 Clone o projeto
